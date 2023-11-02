@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        overflow-x: hidden;
+      }
+
+      body {
+        padding: 0;
+        margin: 0;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+        width: 100%;
+        background-color: black;
+        color: white;
+      }
+
+      .menu-icon {
+        display: none;
+      }
+
+      nav {
+        display: none;
+      }
+
+      header p {
+        margin-left: 30px;
+        font-size: 18px;
+      }
+
+      header p:hover {
+        color: tomato;
+      }
+
+      header a {
+        text-decoration: none;
+        color: white;
+        margin-right: 40px;
+        font-weight: bold;
+      }
+
+      header a:hover {
+        color: tomato;
+      }
+
+      header div {
+        display: flex;
+      }
+
+      .content-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 88vh;
+        gap: 30px;
+      }
+
+      .content-container img {
+        max-width: 100%;
+      }
+
+      #hcp1 {
+        font-size: 15vh;
+        margin: 20px;
+      }
+
+      .hcp {
+        font-size: 8vh;
+        margin: 20px;
+      }
+
+      .line {
+        width: 90%; /* Adjust this as needed */
+        margin: 0 auto;
+        background-color: #b9b4b4;
+        height: 1px;
+        text-align: center;
+      }
+
+      .project-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+        padding: 20px;
+      }
+
+      #my-project {
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .project-column {
+        flex: 1;
+        padding: 10px;
+      }
+
+      .project-title {
+        font-size: 50px;
+        margin-top: 10px;
+        margin-bottom: 0;
+      }
+
+      .project-slogen {
+        font-size: 15px;
+        font-weight: bold;
+        margin: 0;
+        margin-left: 50px;
+      }
+
+      .project-info {
+        display: flex;
+        width: 80%;
+        gap: 30px;
+      }
+
+      .project-description {
+        max-width: 80%;
+        font-size: 20px;
+      }
+
+      #arrow-container {
+        display: flex;
+        align-items: center;
+        width: 235px;
+        height: 42px;
+        border-radius: 50px;
+        cursor: pointer;
+      }
+
+      #arrow-container p {
+        font-size: 20px;
+        font-weight: bold;
+        margin-left: 10px;
+      }
+
+      #arrow-container a {
+        cursor: pointer;
+        color: black;
+        text-decoration: none;
+        margin-left: 20px;
+        padding: 10px 13px;
+        background-color: yellow;
+        border-radius: 100%;
+      }
+
+      #arrow-container a:hover {
+        background-color: rgba(18, 238, 18, 0.671);
+      }
+
+      #project-img {
+        margin-top: 50px;
+        max-width: 60%;
+      }
+
+      footer {
+        text-align: center;
+        padding: 30px;
+      }
+
+      footer a {
+        text-align: center;
+        margin-left: 40px;
+        font-size: 20px;
+        text-decoration: none;
+        color: black;
+      }
+
+      footer a:hover {
+        color: tomato;
+      }
+
+      @media (max-width: 900px) {
+        * {
+          box-sizing: border-box;
+        }
+
+        html {
+          overflow-x: hidden;
+        }
+
+        body {
+          overflow-x: hidden;
+          padding: 0;
+          margin: 0;
+        }
+
+        .menu-icon {
+          display: block;
+          cursor: pointer;
+        }
+
+        .close-icon {
+          position: absolute;
+          color: white;
+          top: 10px;
+          right: 10px;
+          cursor: pointer;
+        }
+
+        nav {
+          display: block;
+        }
+
+        .sidebar {
+          position: fixed;
+          top: 0;
+          right: -250px;
+          width: 50%;
+          height: 100%;
+          background-color: #333;
+          transition: 0.3s;
+        }
+
+        .sidebar ul {
+          list-style-type: none;
+          padding: 0;
+        }
+
+        .sidebar li {
+          padding: 10px 0;
+          text-align: center;
+        }
+
+        .sidebar a {
+          text-decoration: none;
+          color: #fff;
+          font-size: 18px;
+          display: block;
+        }
+
+        .content {
+          margin-right: 250px;
+          padding: 20px;
+          transition: 0.3s;
+        }
+
+        .content.open {
+          margin-right: 0;
+        }
+
+        header p {
+          margin-left: 10px;
+          font-size: 4vw;
+        }
+
+        .header-right {
+          display: none;
+        }
+
+        .content-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: auto;
+          padding: 20px;
+          gap: 1px;
+        }
+
+        .content-container img {
+          width: 100%;
+        }
+
+        #hcp1 {
+          font-size: 15vw;
+          margin: 20px;
+        }
+
+        .hcp {
+          font-size: 8vw;
+          margin: 20px;
+        }
+
+        .project-container {
+          margin: 10px;
+          padding: 10px;
+        }
+
+        #my-project {
+          font-size: 6vw;
+          font-weight: bold;
+          margin-bottom: 20px;
+        }
+
+        .project-info {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          gap: 5px;
+        }
+
+        .project-column {
+          flex: 1;
+          padding: 1px;
+        }
+
+        .project-title {
+          font-size: 10vw;
+          margin-top: 1px;
+        }
+
+        .project-slogen {
+          font-size: 4vw;
+          font-weight: normal;
+          margin: 0;
+          margin-left: 10%;
+        }
+
+        .project-description {
+          max-width: 100%;
+          font-size: 6vw;
+        }
+
+        #project-img {
+          margin-top: 25px;
+          max-width: 100%;
+        }
+
+        #arrow-container p {
+          font-size: 6vw;
+        }
+
+        footer {
+          display: flex;
+          justify-content: space-evenly;
+          padding: 20px;
+        }
+
+        footer a {
+          text-align: center;
+          margin-left: 1px;
+          font-size: 4vw;
+          text-decoration: none;
+          color: black;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <p>Saurabh Verma</p>
+      <div class="header-right">
+        <a href="http://" target="_blank" rel="noopener noreferrer">Contact</a>
+        <a href="http://" target="_blank" rel="noopener noreferrer">Resume</a>
+        <a href="http://" target="_blank" rel="noopener noreferrer">About</a>
+      </div>
+      <div class="menu-icon" id="menu-icon">&#9776;</div>
+    </header>
+
+    <nav class="sidebar" id="sidebar">
+      <div id="close-icon" class="close-icon">✕</div>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Resume</a></li>
+      </ul>
+    </nav>
+    <div class="content">
+      <!-- Your website content goes here -->
+    </div>
+
+    <div class="content-container">
+      <div class="content-image">
+        <img
+          src="https://img.freepik.com/free-vector/frontend-developer-typographic-header-website-interface-design-improvement-web-page-programming-coding-testing-it-profession-isolated-flat-vector-illustration_613284-304.jpg"
+          alt=""
+        />
+      </div>
+
+      <div class="hello-container">
+        <p id="hcp1">Hello!</p>
+        <p class="hcp">I'm Saurabh</p>
+        <p class="hcp">Front End Devloper</p>
+        <p class="hcp">based in India.</p>
+      </div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="project-container">
+      <p id="my-project">MY PROJECTS</p>
+      <div class="project-info">
+        <div class="project-column">
+          <p class="project-title">&#x25CF; spacex</p>
+          <p class="project-slogen">cloned by saurabh</p>
+        </div>
+
+        <div class="project-column">
+          <p class="project-description">
+            i have tried to clone spacex website and it was created on 1 month ago
+          </p>
+          <div id="arrow-container">
+            <p>View Project</p>
+            <a href="" target="_blank" rel="noopener noreferrer">&#10132;</a>
+          </div>
+        </div>
+      </div>
+
+      <img
+        src="https://static.wixstatic.com/media/fb5049_5f8e26eb07394d5c8ba85b6ab2d7d674~mv2.png/v1/fill/w_889,h_480,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/Kia%20-%20Home%20NEW.png"
+        id="project-img"
+      />
+    </div>
+
+    <div class="line"></div>
+
+    <div class="project-container">
+      <div class="project-info">
+        <div class="project-column">
+          <p class="project-title">&#x25CF; Kia</p>
+          <p class="project-slogen">MARKETING WEBSITE REDESIGN</p>
+        </div>
+
+        <div class="project-column">
+          <p class="project-description">
+            After Kia’s global re-brand, we reimagined Kia Canada’s website from
+            an entirely new perspective.
+          </p>
+          <div id="arrow-container">
+            <p>View Project</p>
+            <a href="" target="_blank" rel="noopener noreferrer">&#10132;</a>
+          </div>
+        </div>
+      </div>
+
+      <img
+        src="https://static.wixstatic.com/media/fb5049_5f8e26eb07394d5c8ba85b6ab2d7d674~mv2.png/v1/fill/w_889,h_480,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/Kia%20-%20Home%20NEW.png"
+        id="project-img"
+      />
+    </div>
+
+    <div class="line"></div>
+
+    <div class="project-container">
+      <div class="project-info">
+        <div class="project-column">
+          <p class="project-title">&#x25CF; Kia</p>
+          <p class="project-slogen">MARKETING WEBSITE REDESIGN</p>
+        </div>
+
+        <div class="project-column">
+          <p class="project-description">
+            After Kia’s global re-brand, we reimagined Kia Canada’s website from
+            an entirely new perspective.
+          </p>
+          <div id="arrow-container">
+            <p>View Project</p>
+            <a
+              href="http://127.0.0.1:5500/PROJECTS/unacademy.html"
+              rel="noopener noreferrer"
+              >&#10132;</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <img
+        src="https://static.wixstatic.com/media/fb5049_5f8e26eb07394d5c8ba85b6ab2d7d674~mv2.png/v1/fill/w_889,h_480,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/Kia%20-%20Home%20NEW.png"
+        id="project-img"
+      />
+    </div>
+    <div class="line"></div>
+
+    <footer>
+      <a href="http://" target="_blank" rel="noopener noreferrer">Linkedin</a>
+      <a href="http://" target="_blank" rel="noopener noreferrer">Email</a>
+      <a href="http://" target="_blank" rel="noopener noreferrer">Resume</a>
+    </footer>
+
+    <script>
+      let sidebarOpen = false; // Variable to track if the sidebar is open
+
+      document
+        .getElementById("menu-icon")
+        .addEventListener("click", function (event) {
+          event.stopPropagation(); // Prevent clicks on the menu icon from closing the sidebar
+
+          const sidebar = document.getElementById("sidebar");
+          const content = document.querySelector(".content");
+
+          if (sidebar.style.right === "0px") {
+            sidebar.style.right = "-250px";
+            content.classList.remove("open");
+            enableScroll();
+          } else {
+            sidebar.style.right = "0";
+            content.classList.add("open");
+            disableScroll();
+          }
+
+          sidebarOpen = !sidebarOpen;
+        });
+
+      // Add event listener to close the sidebar when clicking anywhere outside of it
+      document.addEventListener("click", function (event) {
+        const sidebar = document.getElementById("sidebar");
+        const content = document.querySelector(".content");
+
+        if (
+          sidebarOpen &&
+          event.target !== sidebar &&
+          event.target !== document.getElementById("menu-icon") &&
+          !isDescendant(sidebar, event.target)
+        ) {
+          sidebar.style.right = "-250px";
+          content.classList.remove("open");
+          enableScroll();
+          sidebarOpen = false;
+        }
+      });
+
+      // Function to check if an element is a descendant of another
+      function isDescendant(parent, child) {
+        let node = child.parentNode;
+        while (node !== null) {
+          if (node === parent) {
+            return true;
+          }
+          node = node.parentNode;
+        }
+        return false;
+      }
+
+      // Function to disable scrolling
+      function disableScroll() {
+        document.body.style.overflow = "hidden";
+        document.body.style.position = "fixed";
+        document.body.style.width = "100%";
+      }
+
+      // Function to enable scrolling
+      function enableScroll() {
+        document.body.style.overflow = "auto";
+        document.body.style.position = "static";
+        document.body.style.width = "auto";
+      }
+
+      // Add event listener to close the sidebar when clicking the close icon
+      document
+        .getElementById("close-icon")
+        .addEventListener("click", function () {
+          const sidebar = document.getElementById("sidebar");
+          const content = document.querySelector(".content");
+          sidebar.style.right = "-250px";
+          content.classList.remove("open");
+          enableScroll();
+          sidebarOpen = false;
+        });
+    </script>
+  </body>
+</html>
