@@ -371,7 +371,6 @@
       </ul>
     </nav>
     <div class="content">
-      <!-- Your website content goes here -->
     </div>
 
     <div class="content-container">
@@ -406,7 +405,7 @@
           </p>
           <div id="arrow-container">
             <p>View Project</p>
-            <a href="" target="_blank" rel="noopener noreferrer">&#10132;</a>
+            <a href="https://saurabhvermaji.github.io/saurabh/Spacex.html" target="_blank" rel="noopener noreferrer">&#10132;</a>
           </div>
         </div>
       </div>
@@ -483,12 +482,12 @@
     </footer>
 
     <script>
-      let sidebarOpen = false; // Variable to track if the sidebar is open
+      let sidebarOpen = false; 
 
       document
         .getElementById("menu-icon")
         .addEventListener("click", function (event) {
-          event.stopPropagation(); // Prevent clicks on the menu icon from closing the sidebar
+          event.stopPropagation(); 
 
           const sidebar = document.getElementById("sidebar");
           const content = document.querySelector(".content");
@@ -506,7 +505,7 @@
           sidebarOpen = !sidebarOpen;
         });
 
-      // Add event listener to close the sidebar when clicking anywhere outside of it
+      
       document.addEventListener("click", function (event) {
         const sidebar = document.getElementById("sidebar");
         const content = document.querySelector(".content");
@@ -524,7 +523,6 @@
         }
       });
 
-      // Function to check if an element is a descendant of another
       function isDescendant(parent, child) {
         let node = child.parentNode;
         while (node !== null) {
@@ -550,7 +548,7 @@
         document.body.style.width = "auto";
       }
 
-      // Add event listener to close the sidebar when clicking the close icon
+      
       document
         .getElementById("close-icon")
         .addEventListener("click", function () {
