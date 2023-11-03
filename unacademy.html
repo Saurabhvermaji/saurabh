@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Style the header */
+      header {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: #fcfcfc;
+        color: #fff;
+        align-items: center;
+      }
+
+      .logo {
+        padding-left: 25px;
+      }
+
+      /* Mobile Logo */
+      .mobile-logo {
+        display: none; /* Display on all screens by default */
+      }
+
+      /* Desktop Logo */
+      .desktop-logo {
+        display: block; /* Hide on all screens by default */
+      }
+
+      /* Style the right side of the header */
+      .header-right {
+        display: flex;
+        align-items: center;
+      }
+
+      .gift-icon {
+        border: 1px solid #e9eef2;
+        border-radius: 100%;
+        padding: 5px 7px 3px 7px;
+      }
+
+      .login-button {
+        padding: 11px 38px;
+        border-radius: 5px;
+        background-color: white;
+        color: #3c4852;
+        font-weight: bold;
+        border: 1px solid black;
+      }
+
+      .login-button:hover {
+        background-color: #f4f4f4;
+      }
+
+      .join-button {
+        padding: 11px 20px;
+        border-radius: 5px;
+        background-color: #3c4852;
+        font-weight: bold;
+        color: white;
+        border: 1px solid black;
+      }
+
+      /* Style the gift icon, login button, and join button */
+      .gift-icon,
+      .login-button,
+      .join-button {
+        margin-left: 20px;
+      }
+
+      /* Additional styles for the container */
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 532px;
+        background-color: #fefefe;
+      }
+
+      /* Style for the container text on the left */
+      .container-text {
+        width: 40%;
+        margin-right: 20px;
+        padding: 10px;
+        color: #474444;
+      }
+
+      .container-text h2 {
+        font-size: 48px;
+        margin: 0;
+        width: 82%;
+      }
+
+      .container-text p {
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 1px;
+      }
+
+      .container-text input {
+        padding: 14px 130px;
+        margin-top: 10px;
+        border: 1px solid black;
+        border-radius: 5px;
+        outline: none;
+      }
+
+      .container-text button {
+        background-color: #474444;
+        border-radius: 5px;
+        margin-top: 10px;
+        color: #fff;
+        padding: 14px 180px;
+        border: none;
+        cursor: pointer;
+      }
+
+      /* Style for the container image */
+      .img2 {
+        width: 100%;
+        height: auto;
+      }
+
+      .img2 {
+        display: block;
+      }
+
+      .img1 {
+        display: none;
+      }
+
+      /* Additional styles for the goal container */
+      .goal-container {
+        padding-left: 9%;
+        color: rgb(61, 55, 55);
+      }
+
+      .goal-container h2 {
+        font-size: 34px;
+        margin: 0;
+      }
+
+      .goal-container p {
+        font-weight: bold;
+        font-size: 16px;
+        margin: 10px 0;
+      }
+
+      .goal-container input {
+        width: 90%;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+        outline: none;
+        border: 1px solid black;
+      }
+
+      .popular-goals-container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .popular-goals-container h2 {
+        padding-left: 9%;
+      }
+
+      .box-container {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 110px;
+      }
+
+      .box {
+        width: 250px;
+        text-align: center;
+        margin: 10px;
+        border: 1px solid #ccc; /* Add a border */
+        border-radius: 10px; /* Set the border radius */
+        padding: 40px; /* Add padding to create space around the content */
+      }
+
+      .box img {
+        max-width: 100px;
+        height: auto;
+      }
+
+      .popular-goals-container button {
+        width: 16%;
+        margin-left: 120px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        border: 1px solid black;
+        outline: none;
+        border-radius: 5px;
+        background-color: #fcfcfc;
+        color: #3c4852;
+        padding: 15px;
+        cursor: pointer;
+      }
+
+      /* Additional styles for the Unacademy Centres container */
+      .unacademy-centres-container {
+        display: flex;
+        padding: 20px;
+        margin: 30px;
+        width: 80%;
+        margin-left: 120px;
+        box-shadow: 0 4px 6px rgba(20, 20, 20, 0.3); /* Add a light black shadow */
+        background-color: #f7f7f7;
+      }
+      .image-container img {
+        width: 400px;
+        height: 350px;
+        margin-left: 30px;
+        margin-top: 10px;
+      }
+
+      .content-container {
+        width: 200%;
+        padding-left: 60px;
+      }
+
+      .unacademy-centres-container p {
+        margin: 10px 0;
+      }
+
+      #content-container-t1 {
+        font-weight: bold;
+        color: rgb(5, 180, 250);
+      }
+
+      #content-container-t2 {
+        font-size: 35px;
+        width: 80%;
+      }
+
+      #content-container-t3 {
+        font-size: 25px;
+        width: 90%;
+      }
+
+      .content-container-t4-container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .content-container-t4 {
+        margin-left: 10px;
+      }
+
+      .content-container-t4-container-1 {
+        display: flex;
+      }
+
+      .content-container-text {
+        padding-left: 10px;
+      }
+
+      .unacademy-centres-container h2 {
+        font-size: 24px;
+        margin: 0;
+      }
+
+      .unacademy-centres-container button {
+        background-color: #333;
+        color: #fff;
+        width: 25%;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 2px;
+        border: none;
+        cursor: pointer;
+      }
+
+      /* Additional styles for the features container */
+      .features-container {
+        display: flex;
+        justify-content: space-between;
+        width: 83%;
+        margin-top: 60px;
+        margin-left: 100px;
+      }
+
+      .feature {
+        flex: 1;
+        padding: 20px;
+      }
+
+      .feature-textsection-1 {
+        display: none;
+      }
+
+      .feature-textsection-2 {
+        display: flex;
+      }
+
+      .feature img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+      }
+
+      .feature h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0;
+      }
+
+      .feature p {
+        width: 90%;
+        font-size: 17px;
+        margin: 10px 0;
+      }
+
+      /* Additional styles for the app download container */
+      .app-download-container {
+        display: flex;
+        justify-content: flex-end;
+        width: 78%;
+        margin: 10px;
+        margin-top: 40px;
+        padding: 0;
+        margin-left: 120px;
+        height: auto;
+        box-shadow: 0 4px 6px rgba(20, 20, 20, 0.3);
+        border-radius: 10px;
+      }
+
+      .app-info {
+        align-self: center;
+        margin-left: 50px;
+        padding: 10px;
+      }
+
+      .app-info h3 {
+        font-size: 44px;
+        margin: 0;
+      }
+
+      .app-info p {
+        font-size: 20px;
+        margin: 10px 0;
+      }
+
+      .app-download-links {
+        display: flex;
+        align-items: center;
+      }
+
+      .app-download-links a {
+        margin-right: 10px;
+      }
+
+      .app-download-links img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .app-image img {
+        margin-left: 50px;
+        width: 80%;
+        height: 100%;
+      }
+
+      /* Additional styles for the start learning container */
+      .start-learning-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        margin: 50px;
+        position: relative;
+      }
+
+      .start-learning {
+        width: 40%;
+        padding: 20px;
+        margin-left: 40px;
+      }
+
+      .start-learning h3 {
+        font-size: 40px;
+        margin: 0;
+      }
+
+      .start-learning p {
+        font-size: 26px;
+        margin: 10px 0;
+      }
+
+      .start-learning button {
+        background-color: #08bd81;
+        color: #fff;
+        margin-top: 20px;
+        padding: 21px 40px;
+        border-radius: 5px;
+        border: none;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .highlights,
+      .right-highlights {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .highlights-text {
+        position: absolute;
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      #highlights-text-1 {
+        top: 40px;
+        right: 39%;
+      }
+
+      #highlights-text-2 {
+        top: 70px;
+        right: 44%;
+        font-size: 30px;
+      }
+
+      #highlights-text-3 {
+        top: 36%;
+        right: 39%;
+      }
+
+      #highlights-text-4 {
+        top: 41%;
+        right: 44%;
+        font-size: 30px;
+      }
+
+      #highlights-text-5 {
+        top: 66%;
+        right: 39%;
+      }
+
+      #highlights-text-6 {
+        top: 70%;
+        right: 44%;
+        font-size: 30px;
+      }
+
+      #highlights-text-7 {
+        top: 21%;
+        right: 12%;
+      }
+
+      #highlights-text-8 {
+        top: 25%;
+        right: 17%;
+        font-size: 30px;
+      }
+
+      #highlights-text-9 {
+        top: 50%;
+        right: 12%;
+      }
+
+      #highlights-text-10 {
+        top: 54%;
+        right: 17%;
+        font-size: 30px;
+      }
+
+      .highlights img,
+      .right-highlights img {
+        max-width: 100%;
+        height: auto;
+        margin: 10px 0;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(20, 20, 20, 0.3);
+      }
+
+      /* Additional styles for the footer */
+      .footer {
+        display: flex;
+        justify-content: space-around;
+        padding: 20px;
+      }
+
+      .footer-logo {
+        padding: 10px;
+        width: 30%;
+        margin-top: 40px;
+      }
+
+      .footer-logo img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .footer-logo p {
+        width: 88%;
+        font-size: 16px;
+        margin: 10px 0;
+      }
+
+      .call-us-container {
+        padding-top: 80px;
+      }
+
+      #call-us-container-t1,
+      #call-us-container-t3 {
+        font-weight: bold;
+      }
+
+      .app-links {
+        display: flex;
+        justify-content: flex-start;
+      }
+
+      .app-links-2 {
+        width: 100%;
+        margin-left: 10px;
+      }
+
+      .footer-navigation {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 50%;
+        padding: 10px;
+      }
+
+      .footer-company h4,
+      .footer-help h4,
+      .footer-apps h4 {
+        font-size: 18px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      .footer-apps .app-item {
+        display: flex;
+      }
+
+      .footer-apps .app-item img {
+        max-width: 32px;
+        height: auto;
+        margin-right: 10px;
+      }
+
+      .footer-social {
+        display: flex;
+        justify-content: center;
+        border-top: 1px solid #e6e1e1;
+        margin: 20px;
+      }
+
+      .footer-social p {
+        font-size: 14px;
+        padding-top: 20px;
+        align-items: center;
+        align-self: center;
+      }
+      /* Track */
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #a3a8aa;
+        border-radius: 10px;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #297fb9e0;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 60px;
+      }
+
+      /* Add some shadows to the handle */
+      ::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Tablet styles using a media query */
+      @media (max-width: 900px) {
+        * {
+          box-sizing: border-box;
+        }
+
+        html {
+          overflow-x: hidden;
+        }
+
+        body {
+          margin: 0;
+          padding: 0;
+          overflow-x: hidden;
+        }
+
+        header {
+          display: flex;
+          align-items: center;
+          background-color: #fcfcfc;
+          color: #fff;
+        }
+
+        /* Mobile Logo */
+        .mobile-logo {
+          display: inline-block; /* Display on all screens by default */
+          position: relative;
+          padding: 0;
+          margin: 0;
+          right: 30px;
+        }
+
+        /* Desktop Logo */
+        .desktop-logo {
+          display: none; /* Hide on all screens by default */
+        }
+
+        .gift-icon {
+          display: none;
+        }
+
+        .login-button {
+          display: flex;
+          padding: 0;
+          margin-right: 10px;
+          padding: 7px 18px;
+          border-radius: 5px;
+          background-color: white;
+          color: #3c4852;
+          font-weight: bold;
+          border: 1px solid black;
+        }
+
+        .login-button:hover {
+          background-color: #f4f4f4;
+        }
+
+        .join-button {
+          padding: 0;
+          margin: 0px;
+          padding: 7px 6px;
+          border-radius: 5px;
+          background-color: #3c4852;
+          font-weight: bold;
+          color: white;
+          border: 1px solid black;
+          white-space: nowrap;
+        }
+
+        /* Additional styles for the container */
+        .container {
+          display: flex;
+          flex-direction: column;
+          height: auto;
+          background-color: #fefefe;
+        }
+
+        /* Style for the container text on the left */
+        .container-text {
+          width: 100%;
+          height: 480px;
+          padding: 6%;
+          color: #474444;
+        }
+
+        .container-text h2 {
+          font-size: 32px;
+          margin: 0;
+          width: 100%;
+        }
+
+        .container-text p {
+          font-size: 16px;
+          font-weight: bold;
+          margin-top: 1px;
+          width: 100%;
+        }
+
+        .container-text input {
+          width: inherit;
+          padding: 14px;
+          width: 100%;
+          margin-top: 10px;
+          border: 1px solid black;
+          border-radius: 5px;
+          outline: none;
+        }
+
+        .container-text button {
+          background-color: #474444;
+          border-radius: 5px;
+          margin-top: 10px;
+          color: #fff;
+          padding: 14px;
+          width: 100%;
+          border: none;
+          cursor: pointer;
+        }
+
+        /* Style for the container image */
+        .img1 {
+          display: block;
+          position: relative;
+          margin-top: 10px;
+          left: 10%;
+          width: 75%;
+        }
+
+        .img2 {
+          display: none;
+        }
+
+        /* Additional styles for the goal container */
+        .goal-container {
+          margin-top: 5%;
+          padding-left: 4%;
+          color: rgb(61, 55, 55);
+          background-color: #fefefe;
+        }
+
+        .goal-container h2 {
+          font-size: 150%;
+          margin: 0;
+        }
+
+        .goal-container p {
+          font-weight: bold;
+          font-size: 16px;
+          margin: 10px 0;
+        }
+
+        .goal-container input {
+          width: 92%;
+          padding: 15px;
+          margin: 10px 0;
+          border-radius: 5px;
+          outline: none;
+          border: 1px solid black;
+        }
+
+        .popular-goals-container {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        .popular-goals-container h2 {
+          padding-left: 20px;
+        }
+
+        .box-container {
+          display: flex;
+          flex-wrap: wrap;
+          padding-left: 8px;
+        }
+
+        .box {
+          flex-shrink: 10;
+          width: 80px;
+          text-align: center;
+          font-size: 12px;
+          margin: 10px;
+          border: 1px solid #ccc; /* Add a border */
+          border-radius: 10px; /* Set the border radius */
+          padding: 5px; /* Add padding to create space around the content */
+        }
+
+        .box img {
+          flex-shrink: 10;
+          max-width: 40px;
+          height: auto;
+        }
+
+        .popular-goals-container button {
+          margin-left: 20px;
+          width: 45%;
+          border: 1px solid black;
+          outline: none;
+          border-radius: 5px;
+          background-color: #fcfcfc;
+          color: #3c4852;
+          padding: 10px;
+          cursor: pointer;
+        }
+
+        .unacademy-centres-container {
+          display: flex;
+          flex-direction: column;
+          margin-left: 15px;
+          padding-left: 1px;
+          width: 90%;
+          height: auto;
+          box-shadow: 0 4px 6px rgba(20, 20, 20, 0.3); /* Add a light black shadow */
+          background-color: #f7f7f7;
+        }
+        .image-container img {
+          margin: 10px;
+          padding: 0;
+          width: 100%;
+          height: auto;
+        }
+
+        .content-container {
+          width: 100%;
+          padding-left: 15px;
+        }
+
+        .unacademy-centres-container p {
+          margin: 10px 0;
+        }
+
+        #content-container-t1 {
+          font-weight: bold;
+          color: rgb(5, 180, 250);
+        }
+
+        #content-container-t2 {
+          font-size: 21px;
+          width: 100%;
+        }
+
+        #content-container-t3 {
+          font-size: 18px;
+          width: 100%;
+        }
+
+        .content-container-t4-container {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .content-container-t4 {
+          margin-left: 10px;
+        }
+
+        .content-container-text {
+          padding-left: 10px;
+        }
+
+        .unacademy-centres-container button {
+          background-color: #333;
+          color: #fff;
+          width: 55%;
+          padding: 10px;
+          border-radius: 5px;
+          margin-bottom: 2px;
+          border: none;
+          cursor: pointer;
+        }
+
+        .features-container {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          margin-left: 4px;
+        }
+
+        .feature-textsection-1 {
+          display: block;
+          text-align: center;
+        }
+
+        .feature-textsection-2 {
+          display: none;
+        }
+
+        .feature img {
+          width: 100%;
+          height: auto;
+          margin-bottom: 10px;
+        }
+
+        /* Additional styles for the app download container */
+        .app-download-container {
+          display: flex;
+          flex-direction: column;
+          width: 90%;
+          margin: 10px;
+          padding: 0;
+          margin-left: 5%;
+          height: auto;
+          box-shadow: 0 4px 6px rgba(20, 20, 20, 0.3);
+          border-radius: 10px;
+        }
+
+        .app-info {
+          margin-top: 10px;
+          margin-left: 1px;
+          padding: 10px;
+        }
+
+        .app-info h3 {
+          font-size: 4vh;
+          margin: 0;
+        }
+
+        .app-info p {
+          font-size: 15px;
+          margin: 10px 0;
+        }
+
+        .app-download-links {
+          display: flex;
+          align-items: center;
+        }
+
+        .app-download-links a {
+          margin-right: 10px;
+        }
+
+        .app-download-links img {
+          max-width: 100%;
+          height: auto;
+        }
+
+        .app-image img {
+          margin-left: 41px;
+          width: 80%;
+          height: 100%;
+        }
+
+        /* Additional styles for the start learning container */
+        .start-learning-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 1px;
+          margin: 1px;
+          position: relative;
+          right: 5px;
+          width: 90%;
+        }
+
+        .start-learning {
+          width: 100%;
+          text-align: center;
+        }
+
+        .start-learning h3 {
+          font-size: 22px;
+          margin: 0;
+        }
+
+        .start-learning p {
+          font-size: 17px;
+          margin: 10px 0;
+        }
+
+        .start-learning button {
+          background-color: #08bd81;
+          color: #fff;
+          margin-top: 10px;
+          padding: 13px 30px;
+          border-radius: 5px;
+          border: none;
+          font-size: 15px;
+          font-weight: bold;
+          cursor: pointer;
+        }
+
+        .highlights,
+        .right-highlights {
+          display: none;
+        }
+
+        .footer {
+          display: flex;
+          flex-direction: column;
+          padding: 0;
+        }
+
+        .footer-logo {
+          width: 100%;
+          padding: 15px;
+        }
+
+        .call-us-container {
+          padding-top: 10px;
+        }
+
+        .footer-navigation {
+          display: grid;
+          justify-items: center;
+          grid-template-columns: repeat(2, 1fr);
+          grid-auto-flow: row;
+          width: 100%;
+          padding: 10px;
+        }
+
+        #footer-company-2 {
+          padding-left: 15px;
+        }
+
+        .app-links {
+          display: flex;
+          justify-content: flex-start;
+          width: 80%;
+        }
+      }
+
+      @media (max-width: 410px) {
+        .popular-goals-container {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        .popular-goals-container h2 {
+          padding-left: 15px;
+        }
+
+        .box-container {
+          display: flex;
+          flex-wrap: wrap;
+          padding-left: 5px;
+        }
+
+        .box {
+          width: 100px;
+          text-align: center;
+          font-size: 12px;
+          margin: 10px;
+          border: 1px solid #ccc; /* Add a border */
+          border-radius: 10px; /* Set the border radius */
+          padding: 1px; /* Add padding to create space around the content */
+        }
+
+        .box img {
+          margin-top: 20px;
+          max-width: 30px;
+          height: auto;
+        }
+
+        .popular-goals-container button {
+          margin-left: 20px;
+          width: 45%;
+          border: 1px solid black;
+          outline: none;
+          border-radius: 5px;
+          background-color: #fcfcfc;
+          color: #3c4852;
+          padding: 10px;
+          cursor: pointer;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <img
+          class="mobile-logo"
+          src="https://static.uacdn.net/production/_next/static/images/Mobile-Logo.svg?q=75&auto=format%2Ccompress&w=48"
+          alt="Mobile Logo"
+        />
+        <img
+          class="desktop-logo"
+          src="https://static.uacdn.net/production/_next/static/images/logo.svg?q=75&auto=format%2Ccompress&w=256"
+          alt="Desktop Logo"
+        />
+      </div>
+
+      <div class="header-right">
+        <div class="gift-icon">
+          <img
+            src="https://static.uacdn.net/production/_next/static/images/giftHomePage.svg?q=75&auto=format%2Ccompress&w=32"
+            alt=""
+          />
+        </div>
+        <button class="login-button">Login</button>
+        <button class="join-button">Join Us Now</button>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="container-text">
+        <h2>Crack your goal with India’s top educators</h2>
+        <p>Over 10 crore learners trust us for their preparation</p>
+        <div class="container-image">
+          <img
+            src="https://static.uacdn.net/production/_next/static/images/home-illustration.svg?q=75&auto=format%2Ccompress&w=640"
+            alt="Illustration"
+            class="img1"
+          />
+        </div>
+        <input type="text" placeholder="Enter your phone number" />
+        <p>We’ll send an OTP for verification</p>
+        <button>Join for Free</button>
+      </div>
+
+      <div class="container-image">
+        <img
+          src="https://static.uacdn.net/production/_next/static/images/home-illustration.svg?q=75&auto=format%2Ccompress&w=640"
+          alt="Illustration"
+          class="img2"
+        />
+      </div>
+    </div>
+
+    <div class="goal-container">
+      <h2>Select your goal / exam</h2>
+      <p>200+ exams available for your preparation</p>
+      <input type="text" placeholder="Search for your exam" />
+    </div>
+
+    <div class="popular-goals-container">
+      <h2>Popular goals</h2>
+      <div class="box-container">
+        <div class="box">
+          <img
+            src="https://static.uacdn.net/production/_next/static/images/home/goalIcons/upsc.svg?q=75&auto=format%2Ccompress&w=96"
+            alt="UPSC CSE - GS"
+          />
+          <p>UPSC CSE - GS</p>
+        </div>
+        <div class="box">
+          <img
+            src="https://static.uacdn.net/production/_next/static/images/home/goalIcons/iit_jee.svg?q=75&auto=format%2Ccompress&w=96"
+            alt="IIT JEE"
+          />
+          <p>IIT JEE</p>
+        </div>
+        <div class="box">
+          <img
+            src="https://static.uacdn.net/production/_next/static/images/home/goalIcons/neet_ug.svg?q=75&auto=format%2Ccompress&w=96"
+            alt="NEET UG"
+          />
+          <p>NEET UG</p>
+        </div>
+        <div class="box">
+          <img
+            src="https://static.uacdn.net/production/_next/static/images/home/goalIcons/bank_exams.svg?q=75&auto=format%2Ccompress&w=96"
+            alt="Bank Exams"
+          />
+          <p>Bank Exams</p>
+        </div>
+      </div>
+
+      <div class="box-container">
+        <div class="box">
+          <img
+            src="https://static.uacdn.net/production/_next/static/images/home/goalIcons/ssc.svg?q=75&auto=format%2Ccompress&w=96"
+            alt="SSC"
+          />
+          <p>SSC</p>
+        </div>
+
+        <div class="box">
+          <img
+            src="https://static.uacdn.net/production/_next/static/images/home/goalIcons/cat.svg?q=75&auto=format%2Ccompress&w=96"
+            alt="CAT"
+          />
+          <p>CAT</p>
+        </div>
+        <div class="box">
+          <img
+            src="https://static.uacdn.net/production/_next/static/images/home/goalIcons/class_12.svg?q=75&auto=format%2Ccompress&w=96"
+            alt="Class 12"
+          />
+          <p>Class 12</p>
+        </div>
+        <div class="box">
+          <img
+            src="https://static.uacdn.net/production/_next/static/images/home/goalIcons/ca.svg?q=75&auto=format%2Ccompress&w=96"
+            alt="CA"
+          />
+          <p>CA</p>
+        </div>
+      </div>
+      <button>See All Goals</button>
+    </div>
+
+    <div class="unacademy-centres-container">
+      <div class="image-container">
+        <img
+          src="https://static.uacdn.net/web-cms/stores2_Batch_22396665d0.png?q=75&auto=format%2Ccompress&w=1920"
+          alt="Unacademy Centres"
+        />
+      </div>
+      <div class="content-container">
+        <p id="content-container-t1">INTRODUCING</p>
+        <h2 id="content-container-t2">
+          Unacademy Centres for IIT JEE and NEET UG
+        </h2>
+        <p id="content-container-t3">
+          Admissions open in Kota, Delhi, Chandigarh, Sikar, Indore, and 20+
+          other cities!
+        </p>
+
+        <div class="content-container-t4-container">
+          <div class="content-container-t4-container-1">
+            <img
+              src="https://static.uacdn.net/production/_next/static/images/offline-centres/checked.svg?q=75&auto=format%2Ccompress&w=32"
+              class="content-container-t4-img"
+            />
+            <p class="content-container-text">
+              Learn from top educators in your city
+            </p>
+          </div>
+
+          <div class="content-container-t4-container-1">
+            <img
+              src="https://static.uacdn.net/production/_next/static/images/offline-centres/checked.svg?q=75&auto=format%2Ccompress&w=32"
+              class="content-container-t4-img"
+            />
+            <p class="content-container-text">
+              Learn from top educators in your city
+            </p>
+          </div>
+
+          <div class="content-container-t4-container-1">
+            <img
+              src="https://static.uacdn.net/production/_next/static/images/offline-centres/checked.svg?q=75&auto=format%2Ccompress&w=32"
+              class="content-container-t4-img"
+            />
+            <p class="content-container-text">
+              Learn from top educators in your city
+            </p>
+          </div>
+        </div>
+        <button>Find a Centre</button>
+      </div>
+    </div>
+
+    <div class="features-container">
+      <div class="feature">
+        <h3 class="feature-textsection-1">Daily Live Classes</h3>
+        <p class="feature-textsection-1">
+          One subscription gets you access to all our live and recorded classes
+          to watch from the comfort of any of your devices
+        </p>
+        <img
+          src="https://static.uacdn.net/web-cms/dailyliveclasses_0c0023950f_c187155ee3.svg?q=75&auto=format%2Ccompress&w=1920"
+          alt="Daily Live Classes"
+        />
+        <h3 class="feature-textsection-2">Daily Live Classes</h3>
+        <p class="feature-textsection-2">
+          Chat with educators, ask questions, answer live polls, and get your
+          doubts cleared - all while the class is going on
+        </p>
+      </div>
+
+      <div class="feature">
+        <h3 class="feature-textsection-1">Practice and revise</h3>
+        <p class="feature-textsection-1">
+          One subscription gets you access to all our live and recorded classes
+          to watch from the comfort of any of your devices
+        </p>
+        <img
+          src="https://static.uacdn.net/web-cms/syllabus_a9da21d824_b20b285483.svg?q=75&auto=format%2Ccompress&w=1920"
+        />
+        <h3 class="feature-textsection-2">Practice and revise</h3>
+        <p class="feature-textsection-2">
+          Learning isn't just limited to classes with our practice section, mock
+          tests and lecture notes shared as PDFs for your revision
+        </p>
+      </div>
+      <div class="feature">
+        <h3 class="feature-textsection-1">Learn anytime, anywhere</h3>
+        <p class="feature-textsection-1">
+          One subscription gets you access to all our live and recorded classes
+          to watch from the comfort of any of your devices
+        </p>
+        <img
+          src="https://static.uacdn.net/web-cms/learnanytimeanywhere_cb19d5de30_b92bc0c6a1.svg?q=75&auto=format%2Ccompress&w=1920"
+          alt="Daily Live Classes"
+        />
+        <h3 class="feature-textsection-2">Learn anytime, anywhere</h3>
+        <p class="feature-textsection-2">
+          One subscription gets you access to all our live and recorded classes
+          to watch from the comfort of any of your devices
+        </p>
+      </div>
+    </div>
+
+    <div class="app-download-container">
+      <div class="app-info">
+        <h3>Get the learning app</h3>
+        <p>
+          Download lessons and learn anytime, anywhere with the Unacademy app
+        </p>
+        <div class="app-download-links">
+          <a href="#">
+            <img
+              src="https://static.uacdn.net/production/_next/static/images/app_store.png?q=75&auto=format%2Ccompress&w=128"
+              alt="App Store"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="https://static.uacdn.net/production/_next/static/images/play_store.png?q=75&auto=format%2Ccompress&w=128"
+              alt="Play Store"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="app-image">
+        <img
+          src="https://static.uacdn.net/production/_next/static/images/newApp.png?q=75&auto=format%2Ccompress&w=640"
+          alt="Unacademy App"
+          class="unacademy-img"
+        />
+      </div>
+    </div>
+
+    <div class="start-learning-container">
+      <div class="start-learning">
+        <h3>Start learning with Unacademy</h3>
+        <p>
+          Get unlimited access to structured courses & doubt clearing sessions
+        </p>
+        <button>Start Learning</button>
+      </div>
+      <div class="highlights">
+        <p class="highlights-text" id="highlights-text-1">Exam Categories</p>
+        <p class="highlights-text" id="highlights-text-2">1.5k +</p>
+        <img
+          src="https://static.uacdn.net/web-cms/highlightgoals_96d24a04e7_a8e8de225d.svg?q=75&auto=format%2Ccompress&w=384"
+          alt="Highlight Goals"
+        />
+        <p class="highlights-text" id="highlights-text-3">Exam Categories</p>
+        <p class="highlights-text" id="highlights-text-4">1.5k +</p>
+        <img
+          src="https://static.uacdn.net/web-cms/highlightlive_b05ed1f073_a8042bd7a8.svg?q=75&auto=format%2Ccompress&w=384"
+          alt="Highlight Live"
+        />
+        <p class="highlights-text" id="highlights-text-5">Exam Categories</p>
+        <p class="highlights-text" id="highlights-text-6">1.5k +</p>
+        <img
+          src="https://static.uacdn.net/web-cms/highlightminswatched_fe52bc4026_ca82eba8b0.svg?q=75&auto=format%2Ccompress&w=384"
+          alt="Highlight Minutes Watched"
+        />
+      </div>
+      <div class="right-highlights">
+        <p class="highlights-text" id="highlights-text-7">Exam Categories</p>
+        <p class="highlights-text" id="highlights-text-8">1.5k +</p>
+        <img
+          src="https://static.uacdn.net/web-cms/hightlighteducators_c894789a76_58c2a07e52.svg?q=75&auto=format%2Ccompress&w=384"
+          alt="Highlight Educators"
+        />
+        <p class="highlights-text" id="highlights-text-9">Exam Categories</p>
+        <p class="highlights-text" id="highlights-text-10">1.5k +</p>
+        <img
+          src="https://static.uacdn.net/web-cms/highlightfreecourses_bb697dbd44_47fe832f07.svg?q=75&auto=format%2Ccompress&w=384"
+          alt="Highlight Free Courses"
+        />
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-logo">
+        <img
+          src="https://unacademy.com/static/images/logo.svg"
+          alt="Unacademy Logo"
+        />
+        <p>
+          Unacademy is democratizing education, making it accessible to all.
+          Join the revolution, learn on India's largest learning platform.
+        </p>
+
+        <div class="app-links">
+          <a href="#"
+            ><img
+              src="https://static.uacdn.net/production/_next/static/images/app_store.png?q=75&auto=format%2Ccompress&w=128"
+              alt="App Store"
+              class="app-links-1"
+          /></a>
+          <a href="#"
+            ><img
+              src="https://static.uacdn.net/production/_next/static/images/play_store.png?q=75&auto=format%2Ccompress&w=128"
+              alt="Play Store"
+              class="app-links-2"
+          /></a>
+        </div>
+
+        <div class="call-us-container">
+          <p id="call-us-container-t1">Reach out to us</p>
+          <p id="call-us-container-t2">
+            Get your questions answered about learning with Unacademy.
+          </p>
+          <p id="call-us-container-t3">tel:+91 8585858585</p>
+        </div>
+      </div>
+
+      <div class="footer-navigation">
+        <div class="footer-company">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Shikshodaya</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+          </ul>
+        </div>
+        <div class="footer-help">
+          <h4>Help & Support</h4>
+          <ul>
+            <li><a href="#">User Guidelines</a></li>
+            <li><a href="#">Site Map</a></li>
+            <li><a href="#">Refund Policy</a></li>
+            <li><a href="#">Take Down Policy</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Grievance Redressal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-apps">
+          <h4>Apps</h4>
+          <div class="app-item">
+            <img
+              src="https://static.uacdn.net/production/_next/static/images/footer/learner.svg?q=75&auto=format%2Ccompress&w=32"
+              alt="Learner App"
+            />
+            <p>Learner App</p>
+          </div>
+          <div class="app-item">
+            <img
+              src="https://static.uacdn.net/production/_next/static/images/footer/educator.svg?q=75&auto=format%2Ccompress&w=32"
+              alt="Educator App"
+            />
+            <p>Educator App</p>
+          </div>
+          <div class="app-item">
+            <img
+              src="https://static.uacdn.net/production/_next/static/images/footer/parent.svg?q=75&auto=format%2Ccompress&w=32"
+              alt="Parent App"
+            />
+            <p>Parent App</p>
+          </div>
+        </div>
+
+        <div class="footer-company" id="footer-company-2">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Shikshodaya</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-company">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Shikshodaya</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-company" id="footer-company-2">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Shikshodaya</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <div class="footer-social">
+      <p>&copy; 2023 Sorting Hat Technologies Pvt Ltd</p>
+    </div>
+  </body>
+</html>
