@@ -21,7 +21,6 @@
         overflow-x: hidden;
     }
 
-    /*lock body when scrollbar is open*/
     .body-lock-scroll {
         overflow: hidden;
     }
@@ -72,7 +71,6 @@
         position: relative;
         color: white;
         text-decoration: none;
-        /* Remove default underline */
     }
 
     .navigation-list::after {
@@ -84,14 +82,12 @@
         left: 0;
         background-color: white;
         transform: scaleX(0);
-        /* Initially hidden */
         transform-origin: bottom right;
         transition: transform 0.25s ease-out;
     }
 
     .navigation-list:hover::after {
         transform: scaleX(1);
-        /* Expand on hover */
         transform-origin: bottom left;
     }
 
@@ -121,37 +117,25 @@
         transition: 0.4s;
     }
 
-    /* The Overlay (background) */
     .overlay {
-        /* Height & width depends on how you want to reveal the overlay (see JS below) */
         height: 100%;
         width: 0;
         right: 0;
         top: 0;
         position: fixed;
-        /* Stay in place */
         z-index: 1;
-        /* Sit on top */
         background-color: black;
         opacity: 0.9;
         overflow-x: hidden;
-        /* Disable horizontal scroll */
         transition: 0.5s;
-        /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
     }
 
-
-    /* Position the content inside the overlay */
     .overlay-content {
         position: relative;
         top: 10%;
-        /* 25% from the top */
         width: 100%;
-        /* 100% width */
         text-align: center;
-        /* Centered text/links */
         margin-top: 30px;
-        /* 30px top margin to avoid conflict with the close button on smaller screens */
     }
 
 
@@ -159,25 +143,20 @@
         display: none;
     }
 
-    /* The navigation links inside the overlay */
     .overlay a {
         padding: 8px;
         text-decoration: none;
         font-size: 20px;
         color: white;
         display: block;
-        /* Display block instead of inline */
         transition: 0.3s;
-        /* Transition effects on hover (color) */
     }
 
-    /* When you mouse over the navigation links, change their color */
     .overlay a:hover,
     .overlay a:focus {
         color: #f1f1f1;
     }
 
-    /* Position the close button (top right corner) */
     .overlay .closebtn {
         position: absolute;
         top: 20px;
@@ -201,7 +180,6 @@
 
     .img-container {
         display: flex;
-        /* Use flexbox for layout */
         flex-direction: column;
         justify-content: flex-end;
         margin-bottom: 0;
@@ -227,17 +205,14 @@
         padding: 15px 15px;
         color: white;
         border: 2px solid white;
-        /* Add border to create button outline */
         cursor: pointer;
         position: relative;
         overflow: hidden;
         z-index: 0
-            /* Place text on top of everything */
     }
 
     .button-animation:hover {
         color: black;
-        /* Change text color on hover over the pseudo-element */
     }
 
     .button-animation::before {
@@ -249,18 +224,14 @@
         right: 0;
         background-color: white;
         transform: scaleY(0);
-        /* Initially hidden */
         transform-origin: top right;
         transition: transform 0.25s ease-in-out;
         z-index: -1;
-        /* Move the pseudo-element below the text */
     }
 
     .button-animation:hover::before {
         height: 100%;
-        /* Expand from bottom to top on hover */
         transform: scaleY(1);
-        /* Expand vertically */
         transform-origin: bottom right;
     }
 
@@ -284,21 +255,17 @@
         font-size: 36px;
         position: absolute;
         bottom: 20px;
-        /* Adjust as needed */
         color: #ece2e2be;
         left: 50%;
         transform: translateX(-50%);
         animation: fadeBounce 5s ease-in-out infinite;
-        /* Fade and bounce animation */
     }
 
     .scroll-indicator-bar {
         width: 15px;
         height: 15px;
         border-left: 2px solid white;
-        /* Adjust the color and width as needed */
         border-bottom: 2px solid white;
-        /* Adjust the color and width as needed */
         transform: rotate(-45deg);
     }
 
@@ -314,7 +281,6 @@
         top: 440%
     }
 
-    /* Fade and bounce animation keyframes */
     @keyframes fadeBounce {
 
         0%,
@@ -336,7 +302,6 @@
         60%,
         90% {
             opacity: 1;
-            /* Fade in */
             transform: translateY(-10px);
         }
     }
@@ -357,14 +322,12 @@
 
         .logo {
             margin: 0 auto;
-            /* Center the element horizontally */
         }
 
         .spacex-logo {
             width: 100%;
             margin: 0 auto;
-             margin-left: 13px;
-            /* Center the element horizontally */
+            margin-left: 13px;
             height: 30px;
         }
 
@@ -403,7 +366,6 @@
             z-index: 1;
             opacity: 0.9;
             overflow-x: hidden;
-            /* Disable horizontal scroll */
             transition: 0.5s;
         }
 
@@ -415,13 +377,9 @@
             display: block;
             position: relative;
             top: 10%;
-            /* 25% from the top */
             width: 100%;
-            /* 100% width */
             text-align: center;
-            /* Centered text/links */
             margin-top: 30px;
-            /* 30px top margin to avoid conflict with the close button on smaller screens */
         }
 
         .overlay .closebtn {
@@ -468,28 +426,25 @@
         }
     }
 
-    /* Track */
       ::-webkit-scrollbar {
         width: 2px;
       }
-      /* Handle */
+      
       ::-webkit-scrollbar-thumb {
         background: rgb(141, 132, 132);
         border-radius: 1px;
       }
 
-      /* Handle on hover */
+      
       ::-webkit-scrollbar-thumb:hover {
         background: #8a989ee0;
       }
 
-      /* Track */
       ::-webkit-scrollbar-track {
         background: black;
         border-radius: 100px;
       }
 
-      /* Add some shadows to the handle */
       ::-webkit-scrollbar-thumb {
         box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
       }
@@ -499,7 +454,7 @@
     <div class="header-container">
         <div class="header">
             <div class="logo">
-                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjNxS7XfSjhukUo39DR0H926jhY_Omqdx4D8p7DmMbqZxrPCKxSlBHJ_U_hmmTdObykDhgu3-2b-i481n7JwLSdWdTcGs2UdtLvoSOYJ-MUTB_2Ps89h-sUbZGvwa-uFUXqRI2kdKy5tFdI3xNufK2n2u2QEMeDIuCOMLfCdwRGQdZKRjQTv30up8Tn_Bk/s320/SpaceX%20logo.png" class="spacex-logo">
+                <img src="https://raw.githubusercontent.com/Saurabhvermaji/saurabh/Saurabhvermaji-patch-img1/SpaceX%20logo.png" class="spacex-logo">
             </div>
 
             <div class="navigation">
@@ -517,10 +472,10 @@
             <div class="menu">
                 <a href="http://" target="_blank" rel="noopener noreferrer" class="shop" id="shop">SHOP</a>
 
-                <!-- 1. create the close overlay navigation -->
+                
                 <div id="myNav" class="overlay">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <!-- Overlay content -->
+                    
                     <div class="overlay-content">
                         <a href="https://www.spacex.com/mission/" target="_self">MISSION</a>
                         <a href="https://www.spacex.com/launches/" target="_self">LAUNCHES</a>
@@ -543,7 +498,7 @@
                     </div>
                 </div>
 
-                <!-- 2. Use any element to open/show the overlay navigation menu -->
+               
                 <div class="bar-container" onclick="openNav()">
                     <div class="bar1"></div>
                     <div class="bar2"></div>
@@ -606,13 +561,12 @@
     </div>
 
     <script>
-        /* Open when someone clicks on the span element */
+        
         function openNav() {
             document.getElementById("myNav").style.width = "50%";
             document.body.classList.add("body-lock-scroll");
         }
 
-        /* Close when someone clicks on the "x" symbol inside the overlay */
         function closeNav() {
             document.getElementById("myNav").style.width = "0%";
             document.body.classList.remove("body-lock-scroll");
