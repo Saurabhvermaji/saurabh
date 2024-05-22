@@ -1,11 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Questrial&family=Roboto:ital,wght@0,100;0,400;1,900&family=Spectral+SC:wght@200&display=swap" rel="stylesheet">
-    <title>Saurabh Verma</title>
-    <style>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Questrial&family=Roboto:ital,wght@0,100;0,400;1,900&family=Spectral+SC:wght@200&display=swap"
+    rel="stylesheet">
+  <title>Saurabh Verma</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      overflow-x: hidden;
+    }
+
+    body {
+      padding: 0;
+      margin: 0;
+      font-family: 'Questrial', sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      padding: 1px 20px;
+      width: 100%;
+      background-color: black;
+      color: white;
+    }
+
+    nav {
+      display: none;
+    }
+
+    .left-element {
+      font-size: 18px;
+    }
+
+    .right-elements {
+      display: flex;
+      gap: 20px;
+    }
+
+    .right-elements a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .content-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 80px 20px;
+      height: auto;
+      gap: 30px;
+    }
+
+    .content-container img {
+      max-width: 100%;
+    }
+
+    #hcp1 {
+      font-size: 60px;
+      margin: 20px;
+    }
+
+    .hcp {
+      font-size: 55px;
+      margin: 20px;
+    }
+
+    .line {
+      width: 90%;
+      margin: 0 auto;
+      background-color: #b9b4b4;
+      height: 1px;
+      text-align: center;
+    }
+
+    .project-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+      padding: 20px;
+    }
+
+    #my-project {
+      font-size: 25px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .project-column {
+      flex: 1;
+      padding: 10px;
+    }
+
+    .project-title {
+      font-size: 50px;
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+
+    .project-slogen {
+      font-size: 15px;
+      font-weight: bold;
+      margin: 0;
+      margin-left: 50px;
+    }
+
+    .project-info {
+      display: flex;
+      width: 80%;
+      gap: 30px;
+    }
+
+    .project-description {
+      max-width: 80%;
+      font-size: 20px;
+    }
+
+    #arrow-container {
+      display: flex;
+      align-items: center;
+      width: 235px;
+      height: 42px;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+
+    #arrow-container p {
+      font-size: 20px;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+
+    #arrow-container a {
+      cursor: pointer;
+      color: black;
+      text-decoration: none;
+      margin-left: 20px;
+      padding: 10px 13px;
+      background-color: yellow;
+      border-radius: 100%;
+    }
+
+    .project-img {
+      margin-top: 50px;
+      max-width: 50%;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+    }
+
+    footer a {
+      margin-left: 40px;
+      text-decoration: none;
+      color: black;
+    }
+
+    @media (max-width: 900px) {
       * {
         box-sizing: border-box;
       }
@@ -15,264 +178,104 @@
       }
 
       body {
+        overflow-x: hidden;
         padding: 0;
         margin: 0;
-        font-family: 'Questrial', sans-serif;
       }
 
       header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: fixed;
-        top: 0;
-        padding: 1px 20px;
-        width: 100%;
-        background-color: black;
-        color: white;
-      }
-
-      nav {
-        display: none;
+        padding: 1px 15px;
       }
 
       .left-element {
-            font-size: 18px;
-        }
+        font-size: 14px;
+      }
 
-        .right-elements {
-          display: flex;
-          gap: 20px;
-        }
-
-        .right-elements a {
-          text-decoration: none;
-          color: white;
-        }
+      .right-elements {
+        font-size: 14px;
+        gap: 10px;
+      }
 
       .content-container {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin: 80px 20px;
         height: auto;
-        gap: 30px;
+        padding: 20px;
+        gap: 1px;
+        margin: 20px 20px;
+        margin-top: 50px;
       }
 
       .content-container img {
-        max-width: 100%;
+        width: 100%;
       }
 
       #hcp1 {
-        font-size: 60px;
+        font-size: 15vw;
         margin: 20px;
       }
 
       .hcp {
-        font-size: 55px;
+        font-size: 8vw;
         margin: 20px;
-      }
-
-      .line {
-        width: 90%;
-        margin: 0 auto;
-        background-color: #b9b4b4;
-        height: 1px;
-        text-align: center;
       }
 
       .project-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 20px;
+        margin: 10px;
         padding: 20px;
       }
 
       #my-project {
-        font-size: 25px;
+        font-size: 6vw;
         font-weight: bold;
         margin-bottom: 20px;
       }
 
+      .project-info {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+      }
+
       .project-column {
         flex: 1;
-        padding: 10px;
+        padding: 1px;
       }
 
       .project-title {
-        font-size: 50px;
-        margin-top: 10px;
-        margin-bottom: 0;
+        font-size: 10vw;
+        margin-top: 1px;
       }
 
       .project-slogen {
-        font-size: 15px;
-        font-weight: bold;
+        font-size: 4vw;
+        font-weight: normal;
         margin: 0;
-        margin-left: 50px;
-      }
-
-      .project-info {
-        display: flex;
-        width: 80%;
-        gap: 30px;
+        margin-left: 10%;
       }
 
       .project-description {
-        max-width: 80%;
-        font-size: 20px;
+        max-width: 100%;
+        font-size: 5vw;
+      }
+
+      .project-img {
+        margin-top: 25px;
+        max-width: 100%;
       }
 
       #arrow-container {
-        display: flex;
-        align-items: center;
-        width: 235px;
-        height: 42px;
-        border-radius: 50px;
-        cursor: pointer;
+        width: 70%;
       }
 
       #arrow-container p {
-        font-size: 20px;
-        font-weight: bold;
-        margin-left: 10px;
+        font-size: 5vw;
       }
 
       #arrow-container a {
-        cursor: pointer;
-        color: black;
-        text-decoration: none;
-        margin-left: 20px;
-        padding: 10px 13px;
-        background-color: yellow;
-        border-radius: 100%;
-      }
-
-      #project-img {
-        margin-top: 50px;
-        max-width: 60%;
-      }
-
-      footer {
-        text-align: center;
-        padding: 25px;
-      }
-
-      footer a {
-        margin-left: 40px;
-        text-decoration: none;
-        color: black;
-      }
-
-      @media (max-width: 900px) {
-        * {
-          box-sizing: border-box;
-        }
-
-        html {
-          overflow-x: hidden;
-        }
-
-        body {
-          overflow-x: hidden;
-          padding: 0;
-          margin: 0;
-        }
-
-        header {
-                padding: 1px 15px;
-            }
-
-            .left-element {
-                font-size: 14px;
-            }
-
-            .right-elements {
-              font-size: 14px;
-                gap: 10px;
-            }
-
-        .content-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          height: auto;
-          padding: 20px;
-          gap: 1px;
-          margin: 20px 20px;
-          margin-top: 50px;
-        }
-
-        .content-container img {
-          width: 100%;
-        }
-
-        #hcp1 {
-          font-size: 15vw;
-          margin: 20px;
-        }
-
-        .hcp {
-          font-size: 8vw;
-          margin: 20px;
-        }
-
-        .project-container {
-          margin: 10px;
-          padding: 20px;
-        }
-
-        #my-project {
-          font-size: 6vw;
-          font-weight: bold;
-          margin-bottom: 20px;
-        }
-
-        .project-info {
-          display: flex;
-          flex-direction: column;
-          width: 100%;
-          gap: 5px;
-        }
-
-        .project-column {
-          flex: 1;
-          padding: 1px;
-        }
-
-        .project-title {
-          font-size: 10vw;
-          margin-top: 1px;
-        }
-
-        .project-slogen {
-          font-size: 4vw;
-          font-weight: normal;
-          margin: 0;
-          margin-left: 10%;
-        }
-
-        .project-description {
-          max-width: 100%;
-          font-size: 5vw;
-        }
-
-        #project-img {
-          margin-top: 25px;
-          max-width: 100%;
-        }
-
-        #arrow-container {
-          width: 70%;
-        }
-
-        #arrow-container p {
-          font-size: 5vw;
-        }
-
-         #arrow-container a {
         cursor: pointer;
         color: black;
         text-decoration: none;
@@ -282,145 +285,185 @@
         border-radius: 100%;
       }
 
-        footer {
-          display: flex;
-          justify-content: space-evenly;
-          padding: 20px;
-          font-size: 4vw;
-        }
-
-        footer a {
-          text-align: center;
-          margin-left: 1px;
-          text-decoration: none;
-          color: black;
-        }
+      footer {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 20px;
+        font-size: 4vw;
       }
-    </style>
-  </head>
-  <body id="body">
-    <header>
-      <div class="left-element">
-        <p>Saurabh Verma</p>
-      </div>
-      <div class="right-elements">
-        <a href="#" onclick="scrollTohome(); return false;" target="_self" rel="noopener noreferrer"> Home</a>
-        <a href="#" onclick="scrollToproject(); return false;" target="_self" rel="noopener noreferrer" >Projects</a>
-      </div>
-    </header>
 
-    <div class="content-container">
-      <div class="content-image">
-        <img
-          src="https://img.freepik.com/free-vector/frontend-developer-typographic-header-website-interface-design-improvement-web-page-programming-coding-testing-it-profession-isolated-flat-vector-illustration_613284-304.jpg"
-          alt=""
-        />
-      </div>
+      footer a {
+        text-align: center;
+        margin-left: 1px;
+        text-decoration: none;
+        color: black;
+      }
+    }
+  </style>
+</head>
 
-      <div class="hello-container">
-        <p id="hcp1">Hello!</p>
-        <p class="hcp">I'm Saurabh</p>
-        <p class="hcp">Front End Devloper</p>
-        <p class="hcp" id="">based in India.</p>
-      </div>
+<body id="body">
+  <header>
+    <div class="left-element">
+      <p>Saurabh Verma</p>
     </div>
+    <div class="right-elements">
+      <a href="" rel="noopener noreferrer"> Home</a>
+      <a href="#" onclick="scrollToproject(); return false;" target="_self" rel="noopener noreferrer">Projects</a>
+    </div>
+  </header>
 
-    <div class="line" id="line"></div>
-
-    <div class="project-container">
-      <p id="my-project">MY PROJECTS</p>
-      <div class="project-info">
-        <div class="project-column">
-          <p class="project-title">&#x25CF; Unacademy</p>
-          <p class="project-slogen">India's largest learning platform</p>
-        </div>
-
-        <div class="project-column">
-          <p class="project-description">
-            I undertook this ambitious project of cloning the Unacademy website,
-            aiming to replicate its design and functionality.
-          </p>
-          <div id="arrow-container">
-            <p>View Project</p>
-            <a href="https://saurabhvermaji.github.io/saurabh/unacademy.html">&#10132;</a>
-          </div>
-        </div>
-      </div>
-
+  <div class="content-container">
+    <div class="content-image">
       <img
-        src="https://cdn.inc42.com/wp-content/uploads/2023/10/unacademy-CFO-featured--760x570.png"
-        id="project-img"
-      />
+        src="https://img.freepik.com/free-vector/frontend-developer-typographic-header-website-interface-design-improvement-web-page-programming-coding-testing-it-profession-isolated-flat-vector-illustration_613284-304.jpg"
+        alt="" />
     </div>
 
-    <div class="line"></div>
+    <div class="hello-container">
+      <p id="hcp1">Hello!</p>
+      <p class="hcp">I'm Saurabh</p>
+      <p class="hcp">Front End Devloper</p>
+      <p class="hcp" id="">based in India.</p>
+    </div>
+  </div>
 
-    <div class="project-container">
-      <div class="project-info">
-        <div class="project-column">
-          <p class="project-title">&#x25CF; SpaceX</p>
-          <p class="project-slogen">
-            SpaceX designs, manufactures and launches advanced rockets and
-            spacecraft.
-          </p>
-        </div>
+  <div class="line" id="line"></div>
 
-        <div class="project-column">
-          <p class="project-description">
-            I also designed and developed a replica of the SpaceX website,
-            meticulously studying the layout and features, utilized by SpaceX.
-          </p>
-          <div id="arrow-container">
-            <p>View Project</p>
-            <a href="https://saurabhvermaji.github.io/saurabh/Spacex.html">&#10132;</a>
-          </div>
-        </div>
+  <div class="project-container">
+    <p id="my-project">MY PROJECTS</p>
+    <div class="project-info">
+      <div class="project-column">
+        <p class="project-title">&#x25CF; Todo List</p>
+        <p class="project-slogen">Created: May 2024</p>
       </div>
 
-      <img
-        src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/5b017d97270833.5ec1edef9fd9c.png"
-        id="project-img"
-      />
-    </div>
-
-    <div class="line"></div>
-
-    <div class="project-container">
-      <div class="project-info">
-        <div class="project-column">
-          <p class="project-title">&#x25CF; BYJU'S</p>
-          <p class="project-slogen">I successfully cloned BYJU'S website, replicating its design and functionality using react</p>
-        </div>
-    
-        <div class="project-column">
-          <p class="project-description">
-          </p>
-          <div id="arrow-container">
-            <p>View Project</p>
-            <a href="https://saurabhvermaji.github.io/reactprojects/" rel="noopener noreferrer">&#10132;</a>
-          </div>
+      <div class="project-column">
+        <p class="project-description">
+          Frameworks: React and Redux
+        </p>
+        <div id="arrow-container">
+          <p>View Project</p>
+          <a href="https://saurabhvermaji.github.io/TodoApp/">&#10132;</a>
         </div>
       </div>
-    
-      <img src="https://www.livemint.com/lm-img/img/2023/07/24/600x338/BYJU-S-INDIA-ADVISORY-COUNCIL-0_1690187325352_1690187379461.JPG" id="project-img" />
     </div>
 
-    <div class="line"></div>
+    <img src="./logo/Todo.png" class="project-img" />
+  </div>
 
-    <footer>
-      <p>&copy; 2023 Saurabh Verma | All rights reserved</p>
-    </footer>
+  <div class="line"></div>
+  
+  <div class="project-container">
+    <div class="project-info">
+      <div class="project-column">
+        <p class="project-title">&#x25CF; Quiz App</p>
+        <p class="project-slogen">Created: May 2024</p>
+      </div>
+  
+      <div class="project-column">
+        <p class="project-description">
+          Frameworks: React and Redux
+        </p>
+        <div id="arrow-container">
+          <p>View Project</p>
+          <a href="https://saurabhvermaji.github.io/QuizApp/">&#10132;</a>
+        </div>
+      </div>
+    </div>
+  
+    <img
+      src="./logo/quiz.png"
+      class="project-img" />
+  </div>
 
-    <script>
-      function scrollToproject() {
-        var footerSection = document.getElementById("line");
-        footerSection.scrollIntoView({ behavior: "smooth" });
-      }
+  <div class="line"></div>
 
-      function scrollTohome() {
-        var footerSection = document.getElementById("body");
-        footerSection.scrollIntoView({ behavior: "smooth" });
-      }
-    </script>
-  </body>
+  <div class="project-container">
+    <div class="project-info">
+      <div class="project-column">
+        <p class="project-title">&#x25CF; Unacademy</p>
+        <p class="project-slogen">India's largest learning platform</p>
+      </div>
+
+      <div class="project-column">
+        <p class="project-description">
+         Language : HTML CSS JS
+        </p>
+        <div id="arrow-container">
+          <p>View Project</p>
+          <a href="https://saurabhvermaji.github.io/saurabh/unacademy.html">&#10132;</a>
+        </div>
+      </div>
+    </div>
+
+    <img src="./logo/unacademy.png" class="project-img" />
+  </div>
+
+  <div class="line"></div>
+
+  <div class="project-container">
+    <div class="project-info">
+      <div class="project-column">
+        <p class="project-title">&#x25CF; SpaceX</p>
+        <p class="project-slogen">
+          SpaceX designs, manufactures and launches advanced rockets and
+          spacecraft.
+        </p>
+      </div>
+
+      <div class="project-column">
+        <p class="project-description">
+          Language : HTML, CSS and JS
+        </p>
+        <div id="arrow-container">
+          <p>View Project</p>
+          <a href="https://saurabhvermaji.github.io/saurabh/Spacex.html">&#10132;</a>
+        </div>
+      </div>
+    </div>
+
+    <img src="./logo/spacex.png"
+      class="project-img" />
+  </div>
+
+  <div class="line"></div>
+
+  <div class="project-container">
+    <div class="project-info">
+      <div class="project-column">
+        <p class="project-title">&#x25CF; BYJU'S</p>
+        <p class="project-slogen">Learn today and have a bright future.</p>
+      </div>
+
+      <div class="project-column">
+        <p class="project-description">
+          Language : HTML, CSS and JS 
+          </br> </p>
+        <div id="arrow-container">
+          <p>View Project</p>
+          <a href="https://saurabhvermaji.github.io/reactprojects/" rel="noopener noreferrer">&#10132;</a>
+        </div>
+      </div>
+    </div>
+
+    <img
+      src="./logo/byju.png"
+      class="project-img" />
+  </div>
+
+  <div class="line"></div>
+
+  <footer>
+    <p>&copy; 2023 Saurabh Verma | All rights reserved</p>
+  </footer>
+
+  <script>
+    function scrollToproject() {
+      var project = document.getElementById("line");
+      project.scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
+</body>
+
 </html>
